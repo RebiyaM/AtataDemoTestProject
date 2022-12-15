@@ -1,0 +1,50 @@
+{
+  // Find out complete documentation on Atata JSON configuration on https://github.com/atata-framework/atata-configuration-json.
+  "drivers": [
+    {
+      "type": "chrome",
+      "alias": "chrome",
+      "options": {
+        "arguments": [ "start-maximized", "disable-extensions", "--incognito", "force-device-scale-factor=0.75" ]
+      }
+    },
+    {
+      "type": "firefox",
+      "alias": "firefox",
+      "options": {
+        "arguments": [ "--start-maximized", "--incognito", "no-sandbox" ]
+      }
+    }
+  ],
+  "baseUrl": "https://www.ahtgsolutions.com",
+  "culture": "en-US",
+  "useAllNUnitFeatures": true,
+  "logConsumers": [
+    {
+      "type": "nlog-file",
+      "folderPath": "{artifacts}"
+      // Logs can be found in "\bin\Debug\netcoreapp3.1\artifacts" directory.
+    }
+  ],
+  "screenshotConsumers": [
+    {
+      "type": "file",
+      "folderPath": "{artifacts}"
+      // Screenshots can be found in "\bin\Debug\netcoreapp3.1\artifacts" directory.
+    }
+  ],
+  "attributes": {
+    "global": [
+      {
+        "type": "VerifyTitleSettings",
+        "format": "AHTG - American Health Technology Group"
+      }
+    ]
+  },
+
+  // Custom settings:
+  "account": {
+    "email": "",
+    "password": ""
+  }
+}
